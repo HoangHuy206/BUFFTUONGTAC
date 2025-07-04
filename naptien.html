@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nạp Tiền</title>
+</head>
+<style>
+    body{
+  margin: 0;
+    padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url(https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80) ;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #333;
+  line-height: 1.6;
+    }
+    /* Thông Tin */
+.profile {
+position: absolute;
+  top: 10px;
+  right: 20px;
+  display: inline-block;
+}
+
+/* Avatar bo tròn */
+.profile .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* Submenu ẩn mặc định */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #2980b9;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+  min-width: 160px;
+}
+
+.submenu li {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.submenu li:hover {
+
+}
+
+/* Hover vào avatar thì hiện submenu */
+.profile:hover .submenu {
+  display: block;
+}
+a{
+    text-decoration: none;
+  
+}
+
+
+    #header{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+
+ 
+ 
+}
+
+#header li{
+   display: inline-block;
+   
+}
+#header ul{
+  list-style: none;
+  margin: 0;
+
+}
+
+#header li a{
+ line-height: 55px;
+padding: 0 20px;
+ text-decoration: none;
+ color: black;
+ font-family: 'Times New Roman', Times, serif;
+}
+
+#header li:hover a{
+  color: #ffffff;
+  background-color: #333;
+  display: inline-block;
+}
+
+    #img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .nd{
+        font-size: 30px;
+        color:#ffffff;
+        text-align: center;
+    }
+
+    .form-nt{
+        width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h3{
+        text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+    }
+    
+form{
+     display: flex;
+  flex-direction: column;
+}
+p{
+    color: #000000;
+}
+
+p:hover{
+    color: rgb(255, 0, 0);
+    background-color: rgb(234, 255, 0);
+}
+button{
+    border-radius: 50px;
+}
+
+</style>
+ <!-- thông tin -->
+       <div class="profile">
+    <img src="img/avatar-trang-4.jpg" alt="Avatar" class="avatar">
+    <ul class="submenu">
+     <a href=""><li>Thông Tin Tài Khoản</li></a>
+    <a href=""><li>Đăng Xuất</li></a>
+    </ul>
+  </div>
+    </div>
+  </div>
+
+</div>
+<!-- thông tin cá nhân -->
+<body>
+    <div id="header">
+<ul>
+  <li><a href="profile.html">Trang Chủ</a></li>
+  <li><a href="dichvu.html">Dịch Vụ</a></li>
+  <li><a href="donhang.html">Đơn Hàng</a></li>
+  <li><a href="naptien.html">Nạp Tiền</a></li>
+  
+</ul>
+</div>
+    <div id="img">
+        <img src="img\75791a0521b296eccfa3.jpg" alt="" width="400px" height="480px">
+        
+    </div>
+    <div class="nd"><b>Ghi Rõ Nội Dung Chuyển tiền: Anti Đom Đóm+Tên Tk</b> </div>
+    
+    <div class="form-nt">
+       <form action=""> <h3>Nạp Tiền</h3>
+        <input type="number" placeholder="Nhập số tiền cần nạp" required>
+        <input type="number" placeholder="Nhập số seri" required>
+        <input type="number" placeholder="Nhập mã thẻ" required>
+        <details>
+            <summary>Chọn nhà mạng</summary>
+         <section>
+                <p>Viettel</p>
+                <p>Vinaphone</p>
+            
+         </section>
+        </details>
+        <button onclick="">Nạp Thẻ</button>
+    </div>
+    </form>
+    <script>
+            alert("Chào mừng bạn đến với trang nạp tiền! Vui lòng làm theo hướng dẫn để nạp tiền vào tài khoản của bạn.");
+        </script>
+</body>
+</html>

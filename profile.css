@@ -1,0 +1,206 @@
+body {
+  margin: 0;
+    padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url(https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80) ;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #333;
+  line-height: 1.6;
+  
+}
+
+
+
+/* Trang chủ */
+
+#header{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+
+}
+
+
+#header li{
+   display: inline-block;
+   
+}
+#header ul{
+  list-style: none;
+  margin: 0;
+
+}
+
+#header li a{
+ line-height: 55px;
+padding: 0 20px;
+ text-decoration: none;
+ color: black;
+ font-family: 'Times New Roman', Times, serif;
+}
+
+#header li:hover a{
+  color: #ffffff;
+  background-color: #333;
+  display: inline-block;
+}
+
+/* Thông Tin */
+.profile {
+position: absolute;
+  top: 10px;
+  right: 20px;
+  display: inline-block;
+}
+
+/* Avatar bo tròn */
+.profile .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* Submenu ẩn mặc định */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #2980b9;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+  min-width: 160px;
+}
+
+.submenu li {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.submenu li:hover {
+
+}
+
+/* Hover vào avatar thì hiện submenu */
+.profile:hover .submenu {
+  display: block;
+}
+
+/* conten */
+
+.bander{
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.avatar{
+ width: 200px;       
+      height: 200px;
+      object-fit: cover;    
+      border-radius: 50%;    
+      border: 2px solid #333;
+      box-shadow: 0 0 10px rgba(255, 225, 0, 0.5); 
+}
+
+
+
+.box{
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #eef7ff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: black;
+  box-shadow: #db4282;
+}
+.icon-zalo{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.icon-fb{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.icon-telegram{
+  width: 100px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.box b{
+   font-size: 20px;
+}
+ a{
+  text-decoration: none;
+  color: black;
+}
+.box:hover{
+  background-color: #d1e7ff;
+}
+.name{
+  text-align: center;
+
+  font-size: 24px;
+
+  margin-bottom: 20px;
+}
+
+h2{
+  text-align: center;
+  font-size: 36px;
+  color: #bbff00;
+  margin-bottom: 20px;
+}
+
+#bang{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+  align-items: center;
+  color: #eef7ff;
+  background-color: #eef7ff;
+  color: #333;
+}
+
+
+h1{
+  text-align: center;
+  font-size: 48px;
+  color: #00d0e7;
+  margin-bottom: 20px;
+}
+p{
+  text-align: center;
+  font-size: 24px;
+  color: #f73e3e;
+  margin-bottom: 20px;
+}
