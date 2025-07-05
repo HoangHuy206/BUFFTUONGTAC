@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -21,15 +21,12 @@
       text-decoration: none;
     }
 
-    /* Header */
     #header {
       background-color: #fff;
       width: 100%;
-      position: relative;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
       flex-wrap: wrap;
       z-index: 10;
     }
@@ -55,7 +52,6 @@
       color: white;
     }
 
-    /* Avatar nhỏ và menu con */
     .profile {
       position: absolute;
       top: 10px;
@@ -97,10 +93,11 @@
       color: white;
       display: block;
     }
-    .submenu a :hover {
-  background-color: #d1e7ff;
-  color: black;
-}
+
+    .submenu a:hover {
+      background-color: #d1e7ff;
+      color: black;
+    }
 
     .profile:hover .submenu {
       display: block;
@@ -142,26 +139,11 @@
       flex-direction: column;
     }
 
-    input {
+    input, select {
       padding: 10px;
       margin-bottom: 15px;
       border-radius: 5px;
       border: 1px solid #ccc;
-    }
-
-    details {
-      margin-bottom: 15px;
-    }
-
-    p {
-      color: #000;
-      padding: 5px;
-      margin: 0;
-    }
-
-    p:hover {
-      background-color: yellow;
-      color: red;
     }
 
     button {
@@ -206,7 +188,7 @@
 </head>
 <body>
 
-  <!-- Avatar góc phải -->
+  <!-- Avatar -->
   <div class="profile">
     <img src="img/avatar-trang-4.jpg" alt="Avatar" class="avatar">
     <ul class="submenu">
@@ -221,7 +203,7 @@
       <li><a href="index.html">Trang Chủ</a></li>
       <li><a href="dichvu.html">Dịch Vụ</a></li>
       <li><a href="donhang.html">Đơn Hàng</a></li>
-      <li><a href="naptien.html">Nạp Tiền</a></li>
+      <li><a href="index.html">Nạp Tiền</a></li>
     </ul>
   </div>
 
@@ -235,26 +217,41 @@
 
   <!-- Form nạp tiền -->
   <div class="form-nt">
-    <form action="" style="
-    margin-right: 15px;
-">
+    <form id="formNapTien">
       <h3>Nạp Tiền</h3>
-      <input type="number" placeholder="Nhập số tiền cần nạp" required>
-      <input type="number" placeholder="Nhập số seri" required>
-      <input type="number" placeholder="Nhập mã thẻ" required>
-      <details>
-        <summary>Chọn nhà mạng</summary>
-        <section>
-          <p>Viettel</p>
-          <p>Vinaphone</p>
-        </section>
-      </details>
+      <input type="number" id="sotien" placeholder="Nhập số tiền cần nạp" required>
+      <input type="number" id="seri" placeholder="Nhập số seri" required>
+      <input type="number" id="mathe" placeholder="Nhập mã thẻ" required>
+      <select id="nhamang" required>
+        <option value="">-- Chọn nhà mạng --</option>
+        <option value="viettel">Viettel</option>
+        <option value="vinaphone">Vinaphone</option>
+        <option value="mobifone">Mobifone</option>
+      </select>
       <button type="submit">Nạp Thẻ</button>
     </form>
   </div>
 
+  <!-- JavaScript kiểm tra -->
   <script>
     alert("Chào mừng bạn đến với trang nạp tiền! Vui lòng làm theo hướng dẫn để nạp tiền vào tài khoản của bạn.");
+
+    document.getElementById('formNapTien').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const sotien = document.getElementById('sotien').value.trim();
+      const seri = document.getElementById('seri').value.trim();
+      const mathe = document.getElementById('mathe').value.trim();
+      const nhamang = document.getElementById('nhamang').value;
+
+      if (!sotien || !seri || !mathe || !nhamang) {
+        alert("Vui lòng nhập đầy đủ thông tin và chọn nhà mạng.");
+        return;
+      }
+
+      // Chuyển trang
+      window.location.href = "index.html";
+    });
   </script>
 
 </body>
