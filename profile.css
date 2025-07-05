@@ -14,9 +14,10 @@ body {
   color: #333;
   line-height: 1.6;
 }
-a{
-  text-decoration: none;
 
+a {
+  text-decoration: none;
+  color: #000000;
 }
 
 /* Header */
@@ -38,7 +39,6 @@ a{
   flex-wrap: wrap;
   gap: 20px;
   list-style: none;
-
 }
 
 .menu li a {
@@ -55,9 +55,12 @@ a{
   color: white;
 }
 
-/* Avatar */
+/* Avatar nhỏ góc phải + menu con */
 .profile {
-  position: relative;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
 }
 
 .profile .avatar {
@@ -66,9 +69,9 @@ a{
   border-radius: 50%;
   cursor: pointer;
   object-fit: cover;
+  border: 2px solid white;
 }
 
-/* Submenu */
 .submenu {
   display: none;
   position: absolute;
@@ -79,7 +82,7 @@ a{
   padding: 0;
   margin: 0;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 999;
   min-width: 180px;
 }
@@ -91,14 +94,14 @@ a{
   white-space: nowrap;
 }
 
-.profile:hover .submenu {
-  display: block;
-}
-
 .submenu a {
   text-decoration: none;
   display: block;
   color: white;
+}
+
+.profile:hover .submenu {
+  display: block;
 }
 
 /* Avatar lớn */
@@ -131,7 +134,9 @@ a{
   color: black;
 }
 
-.icon-fb, .icon-zalo, .icon-telegram {
+.icon-fb,
+.icon-zalo,
+.icon-telegram {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -186,23 +191,4 @@ p {
     gap: 10px 20px;
   }
 
-  .container .avatar {
-    width: 150px;
-    height: 150px;
-  }
-
-  .box {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .icon-fb, .icon-zalo, .icon-telegram {
-    width: 60px;
-    height: 60px;
-  }
-
-  h1 { font-size: 32px; }
-  h2 { font-size: 24px; }
-  p  { font-size: 18px; }
-}
+  .container .av

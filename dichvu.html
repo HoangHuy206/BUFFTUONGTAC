@@ -1,249 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dịch Vụ</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dịch Vụ</title>
+  <link rel="stylesheet" href="profile.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url(https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Header */
+    #header {
+      background-color: #fff;
+      width: 100%;
+      position: relative;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      z-index: 10;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: black;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    .menu li a:hover {
+      background-color: #333;
+      color: white;
+    }
+
+    /* Avatar nhỏ và menu con */
+    .profile {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+
+    .profile .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #2980b9;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 999;
+      min-width: 180px;
+    }
+
+    .submenu li {
+      padding: 10px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .submenu a {
+      color: white;
+      display: block;
+    }
+
+    .profile:hover .submenu {
+      display: block;
+    }
+
+    h2, h3 {
+      text-align: center;
+      margin-top: 30px;
+      color: #ffcc00;
+    }
+
+    #bang {
+      width: 90%;
+      margin: 0 auto;
+      background-color: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      background-color: rgba(255,255,255,0.9);
+      color: #000;
+    }
+
+    table, td, th {
+      border: 1px solid #333;
+    }
+
+    td, th {
+      padding: 10px;
+      text-align: left;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <style>
-  body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-image: url(https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80) ;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #ffffff;
-  line-height: 1.6;
-}
-/* Thông Tin */
-.profile {
-position: absolute;
-  top: 10px;
-  right: 20px;
-  display: inline-block;
-}
 
-/* Avatar bo tròn */
-.profile .avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  object-fit: cover;
-}
-
-/* Submenu ẩn mặc định */
-.submenu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 0;
-  background-color: #2980b9;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 100;
-  min-width: 160px;
-}
-
-.submenu li {
-  padding: 10px;
-  color: white;
-  cursor: pointer;
-}
-
-.submenu li:hover {
-
-}
-
-/* Hover vào avatar thì hiện submenu */
-.profile:hover .submenu {
-  display: block;
-}
-a{
-  text-decoration: none;
-
-}
-
-#header{
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  display: inline-block;
- 
-}
-
-#header li{
-   display: inline-block;
-   
-}
-#header ul{
-  list-style: none;
-  margin: 0;
-
-}
-
-#header li a{
- line-height: 55px;
-padding: 0 20px;
- text-decoration: none;
- color: black;
- font-family: 'Times New Roman', Times, serif;
-}
-#header li:hover a{
-  color: #ffffff;
-  background-color: #333;
-  display: inline-block;
-}
-    </style>
-     <!-- thông tin -->
-       <div class="profile">
+  <!-- Avatar nhỏ góc phải -->
+  <div class="profile">
     <img src="img/avatar-trang-4.jpg" alt="Avatar" class="avatar">
     <ul class="submenu">
-     <a href=""><li>Thông Tin Tài Khoản</li></a>
-    <a href=""><li>Đăng Xuất</li></a>
+      <a href="#"><li>Thông Tin Tài Khoản</li></a>
+      <a href="dangnhap.html"><li>Đăng Xuất</li></a>
     </ul>
   </div>
-    </div>
+
+  <!-- Menu -->
+  <div id="header">
+    <ul class="menu">
+      <li><a href="index.html">Trang Chủ</a></li>
+      <li><a href="dichvu.html">Dịch Vụ</a></li>
+      <li><a href="donhang.html">Đơn Hàng</a></li>
+      <li><a href="naptien.html">Nạp Tiền</a></li>
+    </ul>
   </div>
 
-</div>
-<!-- thông tin cá nhân -->
+  <!-- Nội dung dịch vụ -->
+  <h2>Các Dịch Vụ</h2>
 
-    <div id="header">
-<ul>
-  <li><a href="index.html">Trang Chủ</a></li>
-  <li><a href="dichvu.html">Dịch Vụ</a></li>
-  <li><a href="donhang.html">Đơn Hàng</a></li>
-  <li><a href="naptien.html">Nạp Tiền</a></li>
-   
-</ul>
-</div>
-    <h2>Các Dịch Vụ</h2>
-<div id="bang">
-  <div class="fb">
- 
+  <div id="bang">
+    <h3>Facebook</h3>
+    <table>
+      <tr><th>Sản Phẩm</th><th>Giá</th></tr>
+      <tr><td>Buff Follow Facebook / sub tây</td><td></td></tr>
+      <tr><td>Buff Like Facebook</td><td></td></tr>
+      <tr><td>Buff Share Facebook</td><td></td></tr>
+      <tr><td>Buff Comment Facebook</td><td></td></tr>
+    </table>
 
-   <h3>Faceboock</h3>
-  
-  <table border="1">
-    <tr>
-      <td>Sản Phẩm</td>
-      <td>Giá</td>
-      
-    </tr>
-    <tr>
-      <td>Buff Follow Faceboock / sub tây</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Buff Like Faceboock </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Buff Share Faceboock</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Buff Comment Faceboock </td>
-      <td></td>
+    <table>
+      <tr><th>Sản Phẩm</th><th>Giá</th></tr>
+      <tr><td>Buff Follow Facebook / sub Việt</td><td></td></tr>
+      <tr><td>Buff Like Facebook</td><td></td></tr>
+      <tr><td>Buff Share Facebook</td><td></td></tr>
+      <tr><td>Buff Comment Facebook</td><td></td></tr>
+    </table>
 
-    </tr>
-  </table> <br>
+    <h3>Sẽ Cập Nhật Thêm</h3>
+    <h3>TikTok</h3>
 
-   <table border="1">
-      <tr>
-      <td>Sản Phẩm</td>
-      <td>Giá</td>
-      
-    </tr>
-    
-   
-    <tr>
-      <td>Buff Follow Faceboock / sub Việt</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Buff Like Faceboock </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Buff Share Faceboock</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Buff Comment Faceboock </td>
-      <td></td>
-     
-    </tr>
+    <table>
+      <tr><th>Sản Phẩm</th><th>Giá</th></tr>
+      <tr><td>Buff Follow TikTok / sub tây</td><td></td></tr>
+      <tr><td>Buff Like TikTok</td><td></td></tr>
+      <tr><td>Buff Share TikTok</td><td></td></tr>
+      <tr><td>Buff Comment TikTok</td><td></td></tr>
+    </table>
 
-  </table>
+    <table>
+      <tr><th>Sản Phẩm</th><th>Giá</th></tr>
+      <tr><td>Buff Follow TikTok / sub Việt</td><td></td></tr>
+      <tr><td>Buff Like TikTok</td><td></td></tr>
+      <tr><td>Buff Share TikTok</td><td></td></tr>
+      <tr><td>Buff Comment TikTok</td><td></td></tr>
+    </table>
   </div>
 
-  <h3>Sẽ Cập Nhật Thêm</h3>
-
- <div class="tiktok">
-
-      <h3>TikTok</h3>
-      <table border="1">
-        <tr>
-          <td>Sản Phẩm</td>
-          <td>Giá</td>
-        </tr>
-        <tr>
-          <td>Buff Follow TikTok / sub tây</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Buff Like TikTok </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Buff Share TikTok</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Buff Comment TikTok </td>
-          <td></td>
-        </tr>
-      </table> 
-      <br>
-
-      <table border="1">
-        <tr>
-          <td>Sản Phẩm</td>
-          <td>Giá</td>
-        </tr>
-
-        <tr>
-          <td>Buff Follow TikTok / sub Việt</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Buff Like TikTok </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Buff Share TikTok</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Buff Comment TikTok </td>
-          <td></td>
-
-        </tr>
-
-      </table>
-  
-  </div>
-</div>
-<script>
-  alert("Chào Mừng Bạn Đến Với Trang Dịch Vụ!");
-</script>
+  <script>
+    alert("Chào Mừng Bạn Đến Với Trang Dịch Vụ!");
+  </script>
 </body>
 </html>
